@@ -6,7 +6,7 @@ import React from "react";
 import { getEmoji } from "@/constants/emoji";
 
 const EmotionHistory = () => {
-  const emotionHistory = emotionStorage.getEmotionHistory();
+  const emotionHistory = emotionStorage.getEmotionHistory().reverse();
 
   return (
     <div>

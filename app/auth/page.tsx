@@ -102,17 +102,10 @@ const AuthPage = () => {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <div className="flex justify-between items-center">
-                        <FormLabel className="text-foreground font-medium">
-                          Password
-                        </FormLabel>
-                        <Link
-                          href="/forgot-password"
-                          className="text-xs text-primary hover:underline"
-                        >
-                          Forgot password?
-                        </Link>
-                      </div>
+                      <FormLabel className="text-foreground font-medium">
+                        Password
+                      </FormLabel>
+
                       <FormControl>
                         <div className="relative">
                           <Input

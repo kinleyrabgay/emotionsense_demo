@@ -1,6 +1,7 @@
 "use client";
 
 import { Navbar } from "@/components/navbar";
+import { authApi, refreshUserData } from "@/lib/api-services/auth-api";
 import { userStorage } from "@/lib/storage-service";
 import { PropsWithChildren, useEffect, useState } from "react";
 
@@ -8,15 +9,17 @@ const RootLayout = ({ children }: PropsWithChildren) => {
   const [user, setUser] = useState<ReturnType<typeof userStorage.getUser> | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Use a separate useEffect to handle the initial hydration
   useEffect(() => {
-    setUser(userStorage.getUser());
-    setIsLoading(false);
+    const fetchUser = async () => {
+      await refreshUserData()
+      setUser(userStorage.getUser());
+      setIsLoading(false);
+    };
+    fetchUser();
   }, []);
 
-  // Sync with sessionStorage after initial hydration is complete
+
   useEffect(() => {
-    // Only set up sync after initial hydration
     if (isLoading) return;
 
     const checkUserInStorage = () => {

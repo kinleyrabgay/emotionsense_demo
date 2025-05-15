@@ -189,6 +189,9 @@ export function useLogoutMutation() {
       // Clear token and user data
       removeAuthToken();
       userStorage.clearUser();
+
+      // Clear emotion history
+      emotionStorage.clearEmotionHistory();
       
       // Invalidate queries
       queryClient.invalidateQueries({ queryKey: ['user'] });
