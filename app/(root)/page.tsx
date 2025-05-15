@@ -206,7 +206,7 @@ const Page = () => {
               />
             }
           />
-          <ControlCard
+          {/* <ControlCard
             label="Live Report"
             description="View your live report."
             control={
@@ -218,7 +218,7 @@ const Page = () => {
                 {liveReportEnabled ? "Hide Live Report" : "View Live Report"}
               </Button>
             }
-          />
+          /> */}
         </div>
       </div>
 
