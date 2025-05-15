@@ -132,11 +132,6 @@ const api = async (
     });
     
     const data = await response.json();
-    console.log("API Response:", {
-      status: response.status,
-      url: response.url,
-      data: data
-    });
     
     // Handle API response
     if (typeof data === 'object' && data !== null) {

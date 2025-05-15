@@ -49,11 +49,6 @@ const AuthPage = () => {
     setShowPassword(!showPassword);
   };
 
-  if (isLoggedIn) {
-    console.log("Logged in");
-    console.log(loginData);
-  }
-
   return (
     <div className="flex items-center justify-center w-full h-[100vh] overflow-hidden bg-gray-50 dark:bg-gray-900">
       <div className="w-full max-w-lg px-4 z-10 relative">
